@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>1.0</ProjectVersion>
+    <ProjectGuid>{97a3bf30-5ce0-4d4f-9005-efb8b7df6c63}</ProjectGuid>
+    <avrdevice>ATmega168</avrdevice>
+    <avrdeviceseries>none</avrdeviceseries>
+    <OutputFile>$(MSBuildProjectName).elf</OutputFile>
+    <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
+    <AvrGccProjectExtensions>
+    </AvrGccProjectExtensions>
+    <AssemblyName>tool_stop</AssemblyName>
+    <Name>tool_stop</Name>
+    <RootNamespace>tool_stop</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <ToolchainSettings>
+      <AvrGcc>
+        <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+        <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+        <avrgcc.compiler.optimization.level>Optimize for size (-Os)</avrgcc.compiler.optimization.level>
+        <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+        <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+        <avrgcc.compiler.optimization.DebugLevel>None</avrgcc.compiler.optimization.DebugLevel>
+        <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+      </AvrGcc>
+    </ToolchainSettings>
+    <MemorySettings>
+    </MemorySettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <ToolchainSettings>
+      <AvrGcc>
+        <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+        <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+        <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+        <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+        <avrgcc.compiler.optimization.DebugLevel>Default (-g2)</avrgcc.compiler.optimization.DebugLevel>
+        <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+        <avrgcc.assembler.debugging.DebugLevel>Default (-g2)</avrgcc.assembler.debugging.DebugLevel>
+      </AvrGcc>
+    </ToolchainSettings>
+    <MemorySettings>
+    </MemorySettings>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="board.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="board.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="config.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="LCD.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="LCD.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="settings.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="settings.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="stepper.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="stepper.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="tool_stop.c">
+      <SubType>compile</SubType>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\AvrGCC.targets" />
+</Project>
