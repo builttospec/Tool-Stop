@@ -21,6 +21,10 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */ 
 
+
+//Nick testing git
+//todo delete this comment and the comment above
+
 #include <avr/io.h>
 
 #include "board.h"
