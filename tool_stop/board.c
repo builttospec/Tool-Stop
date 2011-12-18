@@ -22,8 +22,23 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */ 
 
 #include "board.h"
+#include <avr/io.h>
 
 void board_init(void)
 {
-	
+	DDRB = DDRB_INIT;
+	DDRC = DDRC_INIT;
+	DDRD = DDRD_INIT;
+
+	PORTB = PORTB_INIT;
+	PORTC = PORTC_INIT;
+	PORTD = PORTD_INIT;
+}
+
+void set_debug_led(int value)
+{
+	if (value == 0)
+		STATUS_LED_PORT &= ~(1 << STATUS_LED_PIN);
+    else
+		STATUS_LED_PORT |= (1 << STATUS_LED_PIN);
 }

@@ -25,6 +25,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #ifndef BOARD_H_
 #define BOARD_H_
 
+#define F_CPU 1000000UL
+/* Included after the above define */
+#include <util/delay.h>
+
 /* Keypad related definitions */
 #define KEYPAD_DDR	DDRC
 #define KEYPAD_PORT	PORTC
@@ -63,7 +67,19 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define STATUS_LED_PORT	PORTD
 #define STATUS_LED_PIN	4
 
+/* Default config definitions */
+#define DDRB_INIT	0x3F
+#define DDRC_INIT	0x08
+#define DDRD_INIT	0x13
+
+#define PORTB_INIT	0x00
+#define PORTC_INIT	0x07
+#define PORTD_INIT	0x00
+
+
 /* Board specific function definitions */
 void board_init(void);
+
+void set_debug_led(int value);
 
 #endif /* BOARD_H_ */

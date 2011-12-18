@@ -28,6 +28,7 @@
     </ToolchainSettings>
     <MemorySettings>
     </MemorySettings>
+    <GenerateHexFile>True</GenerateHexFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <ToolchainSettings>

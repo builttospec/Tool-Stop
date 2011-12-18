@@ -19,6 +19,10 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+Programming Command:
+avrdude -c usbtiny -p m168 -U flash:w:"tool_stop.hex"
+
  */ 
 
 
@@ -47,5 +51,9 @@ int main(void)
 	
     while(1)
     {
+		_delay_ms(500);
+		set_debug_led(1);
+		_delay_ms(500);
+		set_debug_led(0);
     }
 }
