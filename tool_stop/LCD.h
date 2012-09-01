@@ -28,4 +28,16 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 /* LCD function definitions */
 void lcd_init(void);
 
+void lcd_w_data(char);
+
+void lcd_w_cmd(int);
+
+void lcd_w_string(char *strPointer);
+
+void lcd_clr(void);
+
+void lcd_set_cur(void);
+
+
+
 #endif /* LCD_H_ */

@@ -29,25 +29,36 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 /* Included after the above define */
 #include <util/delay.h>
 
+/* MOSI data */
+#define DATA PB3
+
+#define READ PB4
+
+/* Clock SCK */
+#define CLOCK PB5
+
 /* Keypad related definitions */
 #define KEYPAD_DDR	DDRC
 #define KEYPAD_PORT	PORTC
 #define C0_PIN		0
 #define C1_PIN		1
-#define C2_PIN		3
+#define C2_PIN		2
 #define KEYPAD_DEBOUNCE_PERIOD	50
+
+
 
 /* Shift register definitions */
 #define LATCH_DDR	DDRC
 #define LATCH_PORT	PORTC
 #define LATCH_PIN	4
 
-/* LCD definitions */
+// LCD definitions 
 #define LCD_DDR		DDRB
 #define LCD_PORT	PORTB
 #define LCD_RS_PIN	0
 #define LCD_RW_PIN	1
 #define LCD_E_PIN	2
+
 
 /* Stepper control definitions */
 #define STEPPER_DDR			DDRD
@@ -81,5 +92,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 void board_init(void);
 
 void set_debug_led(int value);
+
+void shift_init(void);
+
+int returnPin(int pin_number);
+
+
 
 #endif /* BOARD_H_ */

@@ -2,7 +2,7 @@
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectVersion>1.0</ProjectVersion>
+    <ProjectVersion>5.0</ProjectVersion>
     <ProjectGuid>{97a3bf30-5ce0-4d4f-9005-efb8b7df6c63}</ProjectGuid>
     <avrdevice>ATmega168</avrdevice>
     <avrdeviceseries>none</avrdeviceseries>
@@ -13,6 +13,10 @@
     <AssemblyName>tool_stop</AssemblyName>
     <Name>tool_stop</Name>
     <RootNamespace>tool_stop</RootNamespace>
+    <OutputType>Executable</OutputType>
+    <Language>C</Language>
+    <ToolchainName>com.Atmel.AVRGCC8</ToolchainName>
+    <UseGlobalToolchain>True</UseGlobalToolchain>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <ToolchainSettings>
